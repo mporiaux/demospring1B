@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>affichage Client</title>
+</head>
+<body>
+<table border="1">
+  <th>NOM</th>
+  <th>PRENOM</th>
+  <th>ID</th>
+    <tr>
+    <td th:text="${monClient.nom}"/>
+    <td th:text="${monClient.prenom}"/>
+    <td th:text="${monClient.idclient}"/>
+    </tr>
+</table>
+</body>
+</html>

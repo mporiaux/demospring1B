@@ -5,6 +5,6 @@ import be.condorcet.demospring1.modele.Comfact;
 
 import java.util.List;
 
-public interface IntefComfactService extends InterfService<Comfact> {
+public interface InterfComfactService extends InterfService<Comfact> {
     public List<Comfact> getComfacts(Client cl);
 }

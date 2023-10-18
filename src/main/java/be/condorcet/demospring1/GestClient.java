@@ -54,7 +54,7 @@ public class GestClient {
         return "nouveauClient";
     }
 
-    @RequestMapping("/read")
+    @RequestMapping("/selection")
     public String read(@RequestParam int idclient, Map<String, Object> model){
         System.out.println("recherche du client n° "+idclient);
            try {

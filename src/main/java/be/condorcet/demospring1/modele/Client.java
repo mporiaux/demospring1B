@@ -1,7 +1,10 @@
 package be.condorcet.demospring1.modele;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.*;
+
+import java.util.List;
 
 @Data
 @AllArgsConstructor @RequiredArgsConstructor @NoArgsConstructor
@@ -22,7 +25,15 @@ public class Client {
     private String num;
     @NonNull
     private String tel;
-
+    @JsonIgnore
+    // @OneToMany(mappedBy = "client" , fetch = FetchType.EAGER)
+    // @OneToMany(mappedBy = "client" , fetch = FetchType.LAZY,cascade=CascadeType.ALL, orphanRemoval=true)
+    @OneToMany(mappedBy = "client")
+    //LAZY est la version par défaut
+    //cascadeType.ALL permet d'effacer en cascade si le client disparaît
+    // orphanRemoval=true permet d'ajouter et supprimer des commandes en DB à partir de la liste
+    @ToString.Exclude
+    private List<Comfact> comfacts;
 }
 
 

@@ -26,9 +26,9 @@ public class Client {
     @NonNull
     private String tel;
     @JsonIgnore
-    @OneToMany(mappedBy = "client" , fetch = FetchType.EAGER)
+  //  @OneToMany(mappedBy = "client" , fetch = FetchType.EAGER)
     // @OneToMany(mappedBy = "client" , fetch = FetchType.LAZY,cascade=CascadeType.ALL, orphanRemoval=true)
-    //@OneToMany(mappedBy = "client")
+    @OneToMany(mappedBy = "client")
     //LAZY est la version par défaut
     //cascadeType.ALL permet d'effacer en cascade si le client disparaît
     // orphanRemoval=true permet d'ajouter et supprimer des commandes en DB à partir de la liste
